@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowDown, ArrowUpRight, Download, Mail } from "lucide-react";
+import { ArrowDown, Download, Mail } from "lucide-react";
 import { profile } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 
@@ -20,7 +20,6 @@ export default function Intro() {
           <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">I build secure, scalable and user-friendly iOS applications using Swift, UIKit and SwiftUI. I have contributed to 9+ applications across banking, fintech, e-commerce and SaaS domains, including enterprise banking solutions and digital payment applications. My experience includes building applications from scratch, integrating REST APIs, implementing scalable architectures, improving application performance and resolving complex development challenges. I enjoy writing clean, maintainable code and building mobile experiences that provide real value to users.</p>
           <div className="mt-8 grid gap-8 border-y border-black/10 py-6 text-sm dark:border-white/10 sm:grid-cols-2"><ListBlock title="I enjoy solving:" items={solving} /><ListBlock title="Currently exploring:" items={exploring} accent="purple" /></div>
           <div className="mt-7 flex flex-wrap gap-3"><a href={profile.resume} download className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"><Download size={16} aria-hidden="true" /> Download Resume</a><a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-950 hover:text-slate-950 dark:border-white/20 dark:text-slate-200 dark:hover:border-white dark:hover:text-white"><Mail size={16} aria-hidden="true" /> Get in touch</a><a href="#skills" className="inline-flex items-center gap-2 px-2 py-2.5 text-sm font-medium text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">Explore portfolio <ArrowDown size={16} aria-hidden="true" /></a></div>
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-1 text-sm text-slate-500 underline decoration-slate-300 underline-offset-4 transition hover:text-sky-600 dark:text-slate-400 dark:decoration-slate-600 dark:hover:text-sky-400">View professional profile <ArrowUpRight size={14} aria-hidden="true" /></a>
         </div>
       </div>
     </section>
