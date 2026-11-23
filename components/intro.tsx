@@ -12,8 +12,8 @@ export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   return (
     <section ref={ref} id="home" className="scroll-mt-32 pb-20 pt-10 sm:pb-24 sm:pt-16">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[220px_1fr] lg:gap-14">
-        <div className="flex justify-center lg:justify-start"><div className="relative"><Image src="/portfolio/profile.jpg" alt="Shaikh Faizan in a red blazer" width={220} height={220} priority className="h-44 w-44 rounded-full object-cover ring-8 ring-white/70 shadow-2xl shadow-slate-300/30 dark:ring-slate-950/60 dark:shadow-black/30 sm:h-52 sm:w-52" /><span className="absolute -bottom-2 -right-1 text-3xl" role="img" aria-label="Waving hand">👋</span></div></div>
+      <div className="mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-[220px_1fr] lg:gap-14">
+        <div className="flex justify-center lg:justify-start lg:pt-1"><div className="relative"><Image src="/portfolio/profile.jpg" alt="Shaikh Faizan in a red blazer" width={220} height={220} priority className="h-44 w-44 rounded-full object-cover ring-8 ring-white/70 shadow-2xl shadow-slate-300/30 dark:ring-slate-950/60 dark:shadow-black/30 sm:h-52 sm:w-52" /><span className="absolute -bottom-2 -right-1 text-3xl" role="img" aria-label="Waving hand">👋</span></div></div>
         <div>
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-600 dark:text-sky-400">Native iOS development</p>
           <h1 className="max-w-4xl text-3xl font-medium leading-tight tracking-tight text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">Hello, I&apos;m <span className="font-semibold">Faizan</span>. An experienced <span className="font-semibold">iOS Developer</span> with {profile.experience} of experience in designing, developing and delivering high-quality native iOS applications.</h1>

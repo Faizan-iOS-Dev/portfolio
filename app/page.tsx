@@ -6,5 +6,5 @@ import Projects from "@/components/projects";
 import Skills from "@/components/skills";
 
 export default function Home() {
-  return <main className="px-4 sm:px-6"><Intro /><Skills /><Projects /><Experience /><Education /><AIDevelopment /></main>;
+  return <main className="relative z-10 px-4 sm:px-6"><Intro /><Skills /><Projects /><Experience /><Education /><AIDevelopment /></main>;
 }
