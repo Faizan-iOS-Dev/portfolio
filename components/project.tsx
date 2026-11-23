@@ -1,0 +1,14 @@
+"use client";
+
+import { Apple, ExternalLink, Github } from "lucide-react";
+import { companyProjects, type CompanyProject } from "@/lib/data";
+
+function PublicLink({ project }: { project: CompanyProject }) {
+  if (!project.publicLink) return <span className="text-slate-400 dark:text-slate-500">No public link</span>;
+  const Icon = project.publicLink.kind === "github" ? Github : Apple;
+  return <a href={project.publicLink.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-medium text-sky-600 underline decoration-sky-200 underline-offset-4 transition hover:text-sky-800 dark:text-sky-400 dark:decoration-sky-800 dark:hover:text-sky-300"><Icon size={14} aria-hidden="true" /> {project.publicLink.label} <ExternalLink size={12} aria-hidden="true" /></a>;
+}
+
+export default function Project() {
+  return <div><div className="hidden overflow-hidden rounded-2xl border border-black/10 bg-white/60 md:block dark:border-white/10 dark:bg-white/[0.04]"><table className="w-full border-collapse text-left text-sm"><thead className="bg-slate-100/80 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.06] dark:text-slate-400"><tr><th scope="col" className="px-5 py-4 font-semibold">Project Name</th><th scope="col" className="px-5 py-4 font-semibold">Company</th><th scope="col" className="px-5 py-4 font-semibold">Years</th><th scope="col" className="px-5 py-4 font-semibold">Industry</th><th scope="col" className="px-5 py-4 font-semibold">Public Link</th></tr></thead><tbody className="divide-y divide-black/10 dark:divide-white/10">{companyProjects.map((project) => <tr key={project.title} className="transition hover:bg-slate-50/80 dark:hover:bg-white/[0.04]"><th scope="row" className="px-5 py-4 font-semibold text-slate-900 dark:text-white">{project.title}</th><td className="px-5 py-4 text-slate-600 dark:text-slate-300">{project.company}</td><td className="whitespace-nowrap px-5 py-4 text-slate-600 dark:text-slate-300">{project.years}</td><td className="px-5 py-4 text-slate-600 dark:text-slate-300">{project.industry}</td><td className="px-5 py-4"><PublicLink project={project} /></td></tr>)}</tbody></table></div><div className="space-y-3 md:hidden">{companyProjects.map((project) => <article key={project.title} className="rounded-2xl border border-black/10 bg-white/60 p-4 dark:border-white/10 dark:bg-white/[0.04]"><div className="flex items-start justify-between gap-4"><h3 className="font-semibold text-slate-900 dark:text-white">{project.title}</h3><span className="shrink-0 text-right text-xs text-slate-500 dark:text-slate-400">{project.years}</span></div><p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{project.company}</p><p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{project.industry}</p><div className="mt-3 text-sm"><PublicLink project={project} /></div></article>)}</div></div>;
+}
